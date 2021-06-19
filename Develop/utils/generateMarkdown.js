@@ -1,7 +1,6 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  console.log(license);
   if (license =='Apache 2.0' ){
       return ` ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)`
   } else if (license == 'GNU General Public V3.0') {
@@ -28,7 +27,6 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  console.log(license);
   if (license =='Apache 2.0'){
       return `[${license}]((https://opensource.org/licenses/Apache-2.0))`
   } else if (license == 'GNU General Public V3.0') {
@@ -56,48 +54,46 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   return `
-  ## License
-  ### ${renderLicenseLink(license)}
+## License
+### ${renderLicenseLink(license)}
   `
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
 
-  console.log( 
+return `
+# ${data.title} ${renderLicenseBadge(data.license)}
+
+## Description
+### ${data.projDescription}
+
+## Table of contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [License](#license)
+* [Question](#question)
+
+## Installation
+### ${data.projInstall}
+
+## Usage
+### ${data.projUsage}
+
+## Contributing
+### ${data.projContribute}
+
+## Tests
+### ${data.projTest}
+
+${renderLicenseSection(data.license)}
+
+## Question
+### ${data.projGithub}
+### Reach me with additional question ${data.projEmail}
     `
-    # ${data.title}
-    ## ${renderLicenseBadge(data.license)}
-
-    ## Description
-    ### ${data.projDescription}
-
-    ## Table of contents
-    ### [Installation](#installation)
-    ### [Usage](#usage)
-    ### [Contributing](#contributing)
-    ### [Tests](#tests)
-    ### [License](#license)
-    ### [Question](#question)
-
-    ## Installation
-    ### ${data.projInstall}
-
-    ## Usage
-    ### ${data.projUsage}
-
-    ## Contributing
-    ### ${data.projContribute}
-
-    ## Tests
-    ### ${data.projTest}
-
-    ${renderLicenseSection(data.license)}
-   
-    ## Question
-    ### Github link${data.projGithub}
-    ### Reach me with additional question${data.projEmail}
-    `);
 }
 
-module.exports = {generateMarkdown,renderLicenseSection,renderLicenseLink, renderLicenseBadge};
+module.exports = generateMarkdown;
