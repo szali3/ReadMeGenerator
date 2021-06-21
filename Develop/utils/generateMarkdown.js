@@ -55,7 +55,8 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   return `
 ## License
-### ${renderLicenseLink(license)}
+
+${renderLicenseLink(license)}
   `
 }
 
@@ -66,9 +67,11 @@ return `
 # ${data.title} ${renderLicenseBadge(data.license)}
 
 ## Description
-### ${data.projDescription}
+
+${data.projDescription}
 
 ## Table of contents
+
 * [Installation](#installation)
 * [Usage](#usage)
 * [Contributing](#contributing)
@@ -77,22 +80,27 @@ return `
 * [Question](#question)
 
 ## Installation
-### ${data.projInstall}
+
+${data.projInstall}
 
 ## Usage
-### ${data.projUsage}
+
+${data.projUsage}
 
 ## Contributing
-### ${data.projContribute}
+
+${data.projContribute}
 
 ## Tests
-### ${data.projTest}
+
+${data.projTest}
 
 ${renderLicenseSection(data.license)}
 
 ## Question
-### ${data.projGithub}
-### Reach me with additional question ${data.projEmail}
+
+Github: [${data.projGithub}](https://github.com/${data.projGithub}) </br>
+Reach me with additional question <${data.projEmail}>
     `
 }
 

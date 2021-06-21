@@ -30,7 +30,14 @@ function promptUser (questions) {
         {
           type: 'input',
           name: 'title',
-          message: questions[0]
+          message: questions[0],
+          validate: function (name) {
+            if(!name.trim()){
+              return false
+            } else {
+              return true
+            }
+          }
         },
         {
           type: 'input',
