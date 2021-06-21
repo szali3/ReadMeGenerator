@@ -28,23 +28,23 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license =='Apache 2.0'){
-      return `[${license}]((https://opensource.org/licenses/Apache-2.0))`
+      return `[${license}](https://opensource.org/licenses/Apache-2.0)`
   } else if (license == 'GNU General Public V3.0') {
-      return `[${license}]((https://www.gnu.org/licenses/gpl-3.0.en.html)`
+      return `[${license}](https://www.gnu.org/licenses/gpl-3.0.en.html)`
   } else if (license == 'MIT') {
-      return `[${license}]((https://opensource.org/licenses/MIT))`
+      return `[${license}](https://opensource.org/licenses/MIT)`
   } else if (license == 'BSD 3-Clause') {
-      return `[${license}]((https://opensource.org/licenses/BSD-3-Clause))`
+      return `[${license}](https://opensource.org/licenses/BSD-3-Clause)`
   } else if (license == 'Creative Commons Zero') {
-      return `[${license}]((http://creativecommons.org/publicdomain/zero/1.0/))`
+      return `[${license}](http://creativecommons.org/publicdomain/zero/1.0/)`
   } else if (license == 'Eclipse Public License') {
-      return `[${license}]((https://opensource.org/licenses/EPL-1.0)`
+      return `[${license}](https://opensource.org/licenses/EPL-1.0)`
   } else if (license == 'GNU Lesser General Public License') {
-      return `[${license}]((https://www.gnu.org/licenses/lgpl-3.0.en.html))`
+      return `[${license}](https://www.gnu.org/licenses/lgpl-3.0.en.html)`
   } else if (license == 'Mozilla Public License') {
-      return `[${license}]((https://opensource.org/licenses/MPL-2.0))`
+      return `[${license}](https://opensource.org/licenses/MPL-2.0)`
   } else if (license == 'The Unlicense') {
-      return `[${license}]((http://unlicense.org/))`
+      return `[${license}](http://unlicense.org/)`
   } else {
       return "";
   }
@@ -53,11 +53,9 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  return `
-## License
+  return `## License
 
-${renderLicenseLink(license)}
-  `
+${renderLicenseLink(license)}`
 }
 
 // TODO: Create a function to generate markdown for README

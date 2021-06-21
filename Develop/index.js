@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generateMarkdown = require('./utils/generateMarkdown')
+const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = ["Enter project title",
@@ -17,8 +17,6 @@ const questions = ["Enter project title",
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-  // console.log(fileName)
-  // console.log(data)
   fs.writeFile(fileName, data, function (err) {
     if (err) return console.log(err);
     console.log('success');
@@ -75,7 +73,7 @@ function promptUser (questions) {
           message:  questions[7]
         },
         {
-          type: 'checkbox',
+          type: 'list',
           name: 'license',
           message:  questions[8],
           choices: ['Apache 2.0', 
@@ -90,7 +88,7 @@ function promptUser (questions) {
         }
       ]).then(function(data){
           data1=generateMarkdown(data)
-          writeToFile('README.md',data1);
+          writeToFile('../README.md',data1);
       }).catch(err => console.log(err));
 }
 
